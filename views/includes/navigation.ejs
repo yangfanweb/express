@@ -1,0 +1,25 @@
+<div class="mask"></div>
+<header class="shop-header">
+    <button id="side-menu-toggle">菜单</button>
+    <nav class='shop-nav'>
+      <ul class="shop-list">
+        <li class="shop-list-item"><a href="/"  class="<%= path === '/' ? 'active' : '' %>">商店</a></li>
+        <li class="shop-list-item"><a href="/products" class="<%= path === '/products' ? 'active' : '' %>">产品</a></li>
+        <li class="shop-list-item"><a href="/cart" class="<%= path === '/cart' ? 'active' : '' %>">购物车</a></li>
+        <li class="shop-list-item"><a href="/admin/add-product" class="<%= path === '/admin/add-product' ? 'active' : '' %>">添加产品</a></li>
+        <li class="shop-list-item"><a href="/admin/products" class="<%= path === '/admin/products' ? 'active' : '' %>">管理产品</a></li>
+        <li class="shop-list-item"><a href="/orders" class="<%= path === '/orders' ? 'active' : '' %>">我的订单</a></li>
+      </ul>
+    </nav>
+</header>
+
+<nav class="mobile-nav">
+  <ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a href="/"  class="<%= path === '/' ? 'active' : '' %>">商店</a></li>
+    <li class="mobile-nav-item"><a href="/products" class="<%= path === '/products' ? 'active' : '' %>">产品</a></li>
+    <li class="mobile-nav-item"><a href="/cart" class="<%= path === '/cart' ? 'active' : '' %>">购物车</a></li>
+    <li class="mobile-nav-item"><a href="/admin/add-product" class="<%= path === '/admin/add-product' ? 'active' : '' %>">添加产品</a></li>
+    <li class="mobile-nav-item"><a href="/admin/products" class="<%= path === '/admin/products' ? 'active' : '' %>">管理产品</a></li>
+    <li class="mobile-nav-item"><a href="/orders" class="<%= path === '/orders' ? 'active' : '' %>">我的订单</a></li>
+  </ul>
+</nav>

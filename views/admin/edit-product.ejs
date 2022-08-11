@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <main>
+        <form class="product-form" action="/admin/<% if(editing) { %>edit-product <% } else { %>add-product<% } %>" method="post">
+            <div class="form-control">
+                <label for="title">标题</label>
+                <input type="text" name="title" id="title" value="<% if(editing) { %><%= product.title %><% } %>"></input>
+            </div>
+            <div class="form-control">
+                <label for="imageUrl">图片</label>
+                <input type="text" name="imageUrl" id="imageUrl" value="<% if(editing) { %><%= product.imageUrl %><% } %>"></input>
+            </div>
+            <div class="form-control">
+                <label for="price">价格</label>
+                <input type="text" name="price" id="price" value="<% if(editing) { %><%= product.price %><% } %>"></input>
+            </div>
+            <div class="form-control">
+                <label for="description">描述</label>
+                <input type="text" name="description" id="description" value="<% if(editing) { %><%= product.description %><% } %>"></input>
+            </div>
+            <% if(editing){%>
+                <% console.log(product.id)%>
+                <input type="hidden" name="productId" value="<%= product.id %>"></input>
+            <%}%>
+            <button type="submit"><% if(editing) { %>编辑产品 <%} else {%>添加产品<% } %></button>
+        </form>
+    </main>
+    <%- include('../includes/end.ejs')%>

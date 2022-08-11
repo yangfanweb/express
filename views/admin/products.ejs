@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/product.css">
+<%- include('../includes/head.ejs')%>
+
+<body>
+    <%- include('../includes/navigation.ejs')%>
+    <main>
+        <% if(prods.length > 0 ){%>
+        <div class='grid'>
+            <% for(let product of prods){ %>
+            <article class='card product-item'>
+                <header class='card-header'>
+                    <h1 class='product-title'><%= product.title %></h1></h1>
+                    <div class='card-image'>
+                        <img src="<%= product.imageUrl %>"
+                            alt="" />
+                    </div>
+                    <div class='card-content'>
+                        <h2 class='product-price'><%= product.price %></h2>
+                        <p class='product-description'><%= product.description %></p>
+                    </div>
+                    <div class='card-actions'>
+                        <a class='btn' href="/admin/edit-product/<%= product.id%>?edit=true">编辑</a>
+                        <form action="/admin/delete-product" method="post">
+                            <input type="hidden" name="productId" value="<%= product.id %>">
+                            <button class="btn" type="submit">删除</button>
+                        </form>
+                    </div>
+                </header>
+            </article>
+            <% } %>
+        </div>
+        <% } else{ %>
+            <h1>没有更多的产品了</h1>
+        <% } %>
+    </main>
+    <%- include('../includes/end.ejs')%>
